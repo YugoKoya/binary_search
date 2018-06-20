@@ -5,22 +5,23 @@ int k;
 int A[100000];
 
 int p(int x,int A[]){
+    int y = n;
+    int z = k;
     int i;
     for(i = 0; i < n; i++){
-    int y = n;
-    while (y > 0) {
+    while (y >= 0) {
         if (A[y]%x == 0) {
-            k = k-A[y]/x;
+            z = z-A[y]/x;
             y = y-1;
         }
         else {
-            k = k-A[y]/x-1;
+            z = z-A[y]/x-1;
             y = y-1;
         }
-    }
-    }
-    return (int) k >= 0;
+    }}
+    return z >= 0;
 }
+
 
 int main(){
   int  i, lb, ub;
@@ -28,9 +29,9 @@ int main(){
   for(i = 0; i < n; i++){
       scanf("%d", &A[i]);
   }
-    lb = 0;
-    ub = n;
-    while (ub-lb > 1) {
+  lb = -1;
+  ub = n;
+  while (ub-lb > 1) {
         int m = (lb+ub)/2;
         if (p(A[m],A)) {
             ub = m;
@@ -38,7 +39,7 @@ int main(){
         else {
             lb = m;
         }
-    }
-    printf("%d\n",ub);
+  }
+  printf("%d\n",A[ub]);
   return 0;
 }
