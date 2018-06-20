@@ -5,6 +5,14 @@ int k;
 int A[100000];
 
 int p(int x){
+    int y = n;
+    int z = k;
+    while (y > 0) {
+        z = z-A[y]/x;
+        y = y-1;
+    }
+    return z <= 0;
+}
 
 int main(){
   int i, lb, ub;
@@ -12,7 +20,17 @@ int main(){
   for(i = 0; i < n; i++){
     scanf("%d", &A[i]);
   }
-
-
+    lb = 0;
+    ub = A[n-1];
+    while (ub-lb > 1) {
+        int m = (ub+lb)/2;
+        if (p(m)) {
+            lb = m;
+        }
+        else {
+            ub = m;
+        }
+    }
+    printf("%d\n",lb);
   return 0;
 }
