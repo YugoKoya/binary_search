@@ -4,6 +4,7 @@ int n;
 int k;
 int A[100000];
 
+int p(int x){
 
 int main(){
   int i, lb, ub;

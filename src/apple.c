@@ -4,11 +4,9 @@ int n;
 int k;
 int A[100000];
 
-int p(int x,int A[]){
+int p(int x){
     int y = n;
     int z = k;
-    int i;
-    for(i = 0; i < n; i++){
     while (y >= 0) {
         if (A[y]%x == 0) {
             z = z-A[y]/x;
@@ -18,7 +16,7 @@ int p(int x,int A[]){
             z = z-A[y]/x-1;
             y = y-1;
         }
-    }}
+    }
     return z >= 0;
 }
 
@@ -33,7 +31,7 @@ int main(){
   ub = n;
   while (ub-lb > 1) {
         int m = (lb+ub)/2;
-        if (p(A[m],A)) {
+        if (p(A[m])) {
             ub = m;
         }
         else {
