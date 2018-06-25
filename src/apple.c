@@ -27,17 +27,17 @@ int main(){
   for(i = 0; i < n; i++){
       scanf("%d", &A[i]);
   }
-  lb = -1;
-  ub = n;
+  lb = 0;
+  ub = 1000000000;
   while (ub-lb > 1) {
         int m = (lb+ub)/2;
-        if (p(A[m])) {
+        if (p(m)) {
             ub = m;
         }
         else {
             lb = m;
         }
   }
-  printf("%d\n",A[ub]);
+  printf("%d\n",ub);
   return 0;
 }
