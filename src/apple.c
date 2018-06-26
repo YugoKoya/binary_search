@@ -5,7 +5,7 @@ int k;
 int A[100000];
 
 int p(int x){
-    int y = n;
+    int y = n-1;
     int z = k;
     while (y >= 0) {
         if (A[y]%x == 0) {

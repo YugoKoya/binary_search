@@ -8,7 +8,7 @@ int p(int x){
     int y = n;
     int z = k;
     while (y > 0) {
-        z = z-A[y]/x;
+        z = z-A[y-1]/x;
         y = y-1;
     }
     return z <= 0;
@@ -21,7 +21,7 @@ int main(){
     scanf("%d", &A[i]);
   }
     lb = 0;
-    ub = A[n-1];
+    ub = 1000000000;
     while (ub-lb > 1) {
         int m = (ub+lb)/2;
         if (p(m)) {
